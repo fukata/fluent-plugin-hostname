@@ -22,5 +22,16 @@ class HostnameOutputTest < Test::Unit::TestCase
     end
     emits = d.emits
     assert_equal 2, emits.length
+
+    assert_equal 'test', emits[0][0]
+    assert_equal time, emits[0][1]
+    assert_equal ['foo','baz','host'], emits[0][2].keys
+    assert_equal 'app01.hoge', emits[0][2]['host']
+
+
+    assert_equal 'test', emits[0][0]
+    assert_equal time, emits[0][1]
+    assert_equal ['foo','baz','host'], emits[0][2].keys
+    assert_equal 'app01.hoge', emits[0][2]['host']
   end
 end
