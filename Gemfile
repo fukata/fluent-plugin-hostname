@@ -12,3 +12,5 @@ group :development do
   gem "jeweler", "~> 1.8.4"
   gem "rcov", ">= 0"
 end
+
+gem "fluentd", :path => 'vendor/fluentd' if RUBY_VERSION >= "1.9.2"
