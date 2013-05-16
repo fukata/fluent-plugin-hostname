@@ -9,6 +9,11 @@ Fluentd plugin put the hostname in the data.
     <match hoge.foo>
         type hostname
         key_name host
+        add_prefix filtered
+    </match>
+
+    <match filterd.hoge.foo>
+        ...
     </match>
 
 Output messages like:

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name          = "fluent-plugin-hostname"
-  gem.version       = "0.0.1"
+  gem.version       = "0.0.2"
   gem.authors       = ["Tatsuya Fukata"]
   gem.email         = ["tatsuya.fukata@gmail.com"]
   gem.summary       = %q{Fluentd plugin put the hostname in the data}
