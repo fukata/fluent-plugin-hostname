@@ -9,10 +9,12 @@ class HostnameOutputTest < Test::Unit::TestCase
     host app01.hoge
   ]
   CONFIG2 = %[
+    add_prefix filtered
     key_name server
     host app02.hoge
   ]
   CONFIG3 = %[
+    add_prefix filtered
     host app03.hoge
   ]
 
@@ -52,13 +54,13 @@ class HostnameOutputTest < Test::Unit::TestCase
     emits = d.emits
     assert_equal 2, emits.length
 
-    assert_equal 'test', emits[0][0]
+    assert_equal 'filtered.test', emits[0][0]
     assert_equal time, emits[0][1]
     assert_equal ['foo','baz','server'], emits[0][2].keys
     assert_equal 'app02.hoge', emits[0][2]['server']
 
 
-    assert_equal 'test', emits[0][0]
+    assert_equal 'filtered.test', emits[0][0]
     assert_equal time, emits[0][1]
     assert_equal ['foo','baz','server'], emits[0][2].keys
     assert_equal 'app02.hoge', emits[0][2]['server']
@@ -74,13 +76,13 @@ class HostnameOutputTest < Test::Unit::TestCase
     emits = d.emits
     assert_equal 2, emits.length
 
-    assert_equal 'test', emits[0][0]
+    assert_equal 'filtered.test', emits[0][0]
     assert_equal time, emits[0][1]
     assert_equal ['foo','baz','host'], emits[0][2].keys
     assert_equal 'app03.hoge', emits[0][2]['host']
 
 
-    assert_equal 'test', emits[0][0]
+    assert_equal 'filtered.test', emits[0][0]
     assert_equal time, emits[0][1]
     assert_equal ['foo','baz','host'], emits[0][2].keys
     assert_equal 'app03.hoge', emits[0][2]['host']
