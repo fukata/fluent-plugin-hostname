@@ -1,4 +1,4 @@
-# fluent-plugin-hostname
+# fluent-plugin-hostname, a plugin for [Fluentd](http://fluentd.org)
 
 Fluentd plugin put the hostname in the data.
 
